@@ -17,16 +17,16 @@ public class EntradaESaida {
 		return showInputDialog(null, mensagem, titulo, QUESTION_MESSAGE);
 	}
 	
-	public static Integer lerNumeroInteiro(String mensagem, String titulo) {
+	public static Integer lerNumeroInteiro(String mensagem, String titulo) throws NumberFormatException {
 		String string = lerString(mensagem, titulo);
 		
 		return string == null ? null : Integer.parseInt(string);
 	}
 	
-	public static Double lerNumeroReal(String mensagem, String titulo) {
+	public static Float lerNumeroReal(String mensagem, String titulo) throws NumberFormatException {
 		String string = lerString(mensagem, titulo);
 		
-		return string == null ? null : Double.parseDouble(string);
+		return string == null ? null : Float.parseFloat(string);
 	}
 	
 	public static void exibirMensagem(String mensagem, String titulo, int tipoMensagem) {

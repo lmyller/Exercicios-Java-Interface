@@ -1,14 +1,16 @@
 package too.polimorfismo.exercicio3;
 
+import java.time.LocalDate;
+
 public final class ProdutoAlimenticio extends Produto {
 
 	private float peso;
-	private String dataFabricacao, dataValidade;
+	private LocalDate dataFabricacao, dataValidade;
 	
 	public ProdutoAlimenticio() {}
 
-	public ProdutoAlimenticio(String nome, String unidade, String marcaProduto, float preco, int quantidade, float peso, String dataFabricacao,
-							  String dataValidade) {
+	public ProdutoAlimenticio(String nome, String unidade, String marcaProduto, float preco, int quantidade, float peso, LocalDate dataFabricacao,
+							  LocalDate dataValidade) {
 		super(nome, unidade, marcaProduto, preco, quantidade);
 		this.peso = peso;
 		this.dataFabricacao = dataFabricacao;
@@ -23,19 +25,19 @@ public final class ProdutoAlimenticio extends Produto {
 		this.peso = peso;
 	}
 
-	public String getDataFabricacao() {
+	public LocalDate getDataFabricacao() {
 		return dataFabricacao;
 	}
 
-	public void setDataFabricacao(String dataFabricacao) {
+	public void setDataFabricacao(LocalDate dataFabricacao) {
 		this.dataFabricacao = dataFabricacao;
 	}
 
-	public String getDataValidade() {
+	public LocalDate getDataValidade() {
 		return dataValidade;
 	}
 
-	public void setDataValidade(String dataValidade) {
+	public void setDataValidade(LocalDate dataValidade) {
 		this.dataValidade = dataValidade;
 	}
 

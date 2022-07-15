@@ -43,6 +43,6 @@ public final class ProdutoAlimenticio extends Produto {
 
 	@Override
 	public String toString() {
-		return String.format("Peso: %,1.2f, Data de fabricacao: %s, Data de validade: %s", peso, dataFabricacao, dataValidade);
+		return String.format("%sPeso: %,1.2f\nData de fabricacao: %s\nData de validade: %s\n", super.toString(), peso, dataFabricacao, dataValidade);
 	}
 }

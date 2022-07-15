@@ -5,6 +5,7 @@ import static too.interfaces.entradaesaida.EntradaESaida.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.Collections;
 
 import too.polimorfismo.exercicio3.Produto;
 import too.polimorfismo.exercicio3.ProdutoAlimenticio;
@@ -57,6 +58,7 @@ public class ControleDeEstoque {
 							
 	public static void main(String[] args) {
 		new ControleDeEstoque();
+		System.exit(0);
 	}
 	
 	public ControleDeEstoque() {
@@ -70,6 +72,7 @@ public class ControleDeEstoque {
 			
 			switch(escolha) {
 			case COMANDO_CADASTRAR: cadastrar(produtosList); break;
+			case COMANDO_CONSULTAR_NOME: consultarPorNome(produtosList);
 			}
 		}
 	}
@@ -104,6 +107,18 @@ public class ControleDeEstoque {
 			return;
 		
 		produtosList.adicionarProduto(produto);
+	}
+	
+	private void consultarPorNome(ProdutosList produtosList) {
+		String nome = lerStringProduto(NOME_PRODUTO, TITULO);
+		Produto produto = new ProdutoAlimenticio();
+		
+		produto.setNome(nome);
+		if(nome == null) return;
+		
+		int posicao = Collections.binarySearch(produtosList.produtos, produto);
+		
+		exibirMensagemInformativa(produtosList.obterProduto(posicao).toString(), TITULO);
 	}
 
 	private String lerStringProduto(String mensagem, String titulo) {

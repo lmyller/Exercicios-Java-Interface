@@ -1,6 +1,6 @@
 package too.polimorfismo.exercicio3;
 
-public class Produto {
+public abstract class Produto implements Comparable<Produto>{
 	
 	private String nome, unidade, marcaProduto;
 	private float preco;
@@ -84,10 +84,15 @@ public class Produto {
 
 	@Override
 	public String toString() {
-		return String.format("Nome: %s, Unidade: %s, Marca do Produto: %s, preco: %,1.2f, quantidade: %d", nome, unidade,
+		return String.format("Nome: %s\nUnidade: %s\nMarca do Produto: %s\nPreco: %,1.2f\nQuantidade: %d\n", nome, unidade,
 				marcaProduto, preco, quantidade);
 	}
 	
+	@Override
+	public int compareTo(Produto produto) {
+		return this.nome.compareToIgnoreCase(produto.nome);
+	}
+
 	private class Fornecedor {
 		private String nome, telefone;
 
@@ -116,5 +121,4 @@ public class Produto {
 			return String.format("Nome: %s, Telefone: %s", nome, telefone);
 		}
 	}
-
 }

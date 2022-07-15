@@ -30,6 +30,6 @@ public final class ProdutoVestuario extends Produto {
 
 	@Override
 	public String toString() {
-		return String.format("Cor: %s, Tamanho do produto: %s", cor, tamanhoProduto);
+		return String.format("%sCor: %s\nTamanho do produto: %s\n", super.toString(), cor, tamanhoProduto);
 	}
 }
